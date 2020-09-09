@@ -9,5 +9,4 @@ variable "enter_path_to_private_key"       {
 }
 variable "project"       {
   type = string
-  default = "my-day01-project"
 }
