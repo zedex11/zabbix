@@ -19,5 +19,5 @@ sudo cat<<EOF>>/etc/ssh/sshd_config
 AuthorizedKeysCommand /opt/ssh_ldap.sh
 AuthorizedKeysCommandUser nobody
 EOF
+sudo sed -i '/PasswordAuthentication/s/no/yes/' /etc/ssh/sshd_config
 sudo systemctl restart sshd
-
