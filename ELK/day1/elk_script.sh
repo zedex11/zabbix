@@ -44,11 +44,6 @@ autorefresh=1
 type=rpm-md
 EOF
 sudo yum install --enablerepo=elasticsearch elasticsearch -y
-sudo cat<<EOF>>/etc/elasticsearch/elasticsearch.yml
-network.host: 0.0.0.0
-http.port: 9200
-discovery.seed_hosts: ["0.0.0.0"]
-EOF
 sudo /bin/systemctl daemon-reload
 sudo /bin/systemctl enable elasticsearch.service
 sudo systemctl start elasticsearch.service
@@ -71,3 +66,11 @@ sudo echo -e "\nserver.host: "0.0.0.0"" >> /etc/kibana/kibana.yml
 sudo /bin/systemctl daemon-reload
 sudo /bin/systemctl enable kibana.service
 sudo systemctl start kibana.service
+
+sleep 3m
+sudo cat<<EOF>>/etc/elasticsearch/elasticsearch.yml
+network.host: 0.0.0.0
+http.port: 9200
+discovery.seed_hosts: ["127.0.0.1"]
+EOF
+sudo systemctl restart elasticsearch.service
