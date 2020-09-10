@@ -10,7 +10,7 @@ provider "google" {
 resource "google_compute_instance" "vm_elk" {
   name          = "elk-server"
   machine_type  = "n1-standard-1"
-  tags          = ["http-server", "https-server", "kibana"]
+  tags          = ["http-server", "https-server", "elk"]
 
   boot_disk {
     initialize_params {
@@ -19,7 +19,7 @@ resource "google_compute_instance" "vm_elk" {
   }
 
   metadata = {
-    ssh-keys    = "centos:${file("key.pub")}"
+    ssh-keys    = "${var.user_name}:${file(var.enter_path_to_public_key)}"
   }
   metadata_startup_script = file("elk_script.sh")
 
@@ -44,7 +44,7 @@ resource "google_compute_instance" "vm_tomcat" {
   }
 
   metadata = {
-    ssh-keys    = "centos:${file("key.pub")}"  
+    ssh-keys    = "${var.user_name}:${file(var.enter_path_to_public_key)}"  
   }
   metadata_startup_script = file("tomcat_script.sh")
 
@@ -55,7 +55,7 @@ resource "google_compute_instance" "vm_tomcat" {
   }
 }
 
-// create firewall rule for elk
+// create firewall rules for elk
 resource "google_compute_firewall" "kibana" {
   name          = "kibana"
   network       = "default"
@@ -64,7 +64,7 @@ resource "google_compute_firewall" "kibana" {
     ports       = ["5601"]
   }
   source_ranges = ["0.0.0.0/0"]
-  target_tags   = ["kibana"] 
+  target_tags   = ["elk"] 
 }
 
 resource "google_compute_firewall" "elastic" {
@@ -75,7 +75,7 @@ resource "google_compute_firewall" "elastic" {
     ports       = ["9200"]
   }
   source_ranges = ["0.0.0.0/0"]
-  target_tags   = ["kibana"] 
+  target_tags   = ["elk"] 
 }
 
 

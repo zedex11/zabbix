@@ -44,6 +44,10 @@ autorefresh=1
 type=rpm-md
 EOF
 sudo yum install --enablerepo=elasticsearch elasticsearch -y
+sudo cat<<EOF>>/etc/elasticsearch/elasticsearch.yml
+network.host: 0.0.0.0
+http.port: 9200
+EOF
 sudo /bin/systemctl daemon-reload
 sudo /bin/systemctl enable elasticsearch.service
 sudo systemctl start elasticsearch.service

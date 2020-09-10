@@ -1,0 +1,5 @@
+![alt text](https://github.com/zedex11/zabbix/blob/master/ELK/day1/scrin/output.png)
+![alt text](https://github.com/zedex11/zabbix/blob/master/ELK/day1/scrin/dashboard.png)
+![alt text](https://github.com/zedex11/zabbix/blob/master/ELK/day1/scrin/Discover.png)
+![alt text](https://github.com/zedex11/zabbix/blob/master/ELK/day1/scrin/cluster_health.png)
+![alt text](https://github.com/zedex11/zabbix/blob/master/ELK/day1/scrin/index.png)
