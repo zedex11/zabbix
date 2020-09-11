@@ -1,35 +1,5 @@
 #!/bin/bash
-
-##########install and cofiguration logstash###############
 sudo yum install java-1.8.0-openjdk -y
-sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
-sudo cat<<EOF>/etc/yum.repos.d/logstash.repo
-[logstash-7.x]
-name=Elastic repository for 7.x packages
-baseurl=https://artifacts.elastic.co/packages/7.x/yum
-gpgcheck=1
-gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
-enabled=1
-autorefresh=1
-type=rpm-md
-EOF
-sudo yum install logstash -y
-sudo cat<<EOF>/etc/logstash/conf.d/logstash.conf
-input {
-  file {
-    path => "/var/log/logstash/elk-users.log"
-    start_position => "beginning"
-  }
-}
-output {
-  elasticsearch {
-    hosts => ["localhost:9200"]
-  }
-  stdout { codec => rubydebug }
-}
-EOF
-sudo systemctl restart logstash
-
 
 ##########install and cofiguration elasticsearch#################
 
