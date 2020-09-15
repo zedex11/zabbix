@@ -27,7 +27,8 @@ DAY2
 ![alt text](https://github.com/zedex11/zabbix/blob/master/zabbix/day1-day2/scrin/20.stop_tomcat.png)
 ![alt text](https://github.com/zedex11/zabbix/blob/master/zabbix/day1-day2/scrin/21.alarm_web.png)
 
-tomcat logs
+Tomcat Logs
+
 ![alt text](https://github.com/zedex11/zabbix/blob/master/zabbix/day1-day2/scrin/22.tom_log_item.png)
 ![alt text](https://github.com/zedex11/zabbix/blob/master/zabbix/day1-day2/scrin/23.tom_cat_log.png)
 
