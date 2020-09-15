@@ -4,6 +4,5 @@
 ![alt text](https://github.com/zedex11/zabbix/blob/master/zabbix/day1/scrin/trigger_sent_notif.png)
 ![alt text](https://github.com/zedex11/zabbix/blob/master/zabbix/day1/scrin/mail.png)
 ![alt text](https://github.com/zedex11/zabbix/blob/master/zabbix/day1/scrin/agent%20registration_action.png)
-![alt text](https://github.com/zedex11/zabbix/blob/master/zabbix/day1/scrin/agent%20registration_action.png)
 ![alt text](https://github.com/zedex11/zabbix/blob/master/zabbix/day1/scrin/agent%20registration_operation.png)
 ![alt text](https://github.com/zedex11/zabbix/blob/master/zabbix/day1/scrin/agent%20registration.png)
