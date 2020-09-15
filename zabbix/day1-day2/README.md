@@ -34,3 +34,5 @@ Tomcat Logs
 
 api
 ![alt text](https://github.com/zedex11/zabbix/blob/master/zabbix/day1-day2/scrin/24.some_request%20to%20api.png)
+![alt text](https://github.com/zedex11/zabbix/blob/master/zabbix/day1-day2/scrin/25.host_create_api.png)
+![alt text](https://github.com/zedex11/zabbix/blob/master/zabbix/day1-day2/scrin/26.%20resault.png)
