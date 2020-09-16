@@ -28,3 +28,12 @@ sudo systemctl start tomcat
 sudo mv /tmp/clusterjsp.war /var/lib/tomcat/webapps/
 sudo chmod 775 /var/log/tomcat
 sudo chmod 775 /var/log/tomcat/*
+
+sleep 1m
+#######script create host on zabbix server##############
+sudo yum install jq -y
+IP_self=`ip addr list eth0 | grep "  inet " | head -n 1 | cut -d " " -f 6 | cut -d / -f 1`
+curl -i -X POST -H 'Content-type:application/json' -d '{"jsonrpc":"2.0","method":"user.login","params":{ "user":"Admin","password":"zabbix"},"auth":null,"id":0}' http://${IP}/zabbix/api_jsonrpc.php | tail -n -1 > token
+cat token | jq -r .result > TOKEN
+read TOKEN < TOKEN
+curl -i -X POST -H 'Content-type:application/json' -d '{"jsonrpc":"2.0","method":"host.create","params":{"host":"Linux server","interfaces":[{"type":1,"main":1,"useip":1,"ip":"$IP_self","dns":"","port":"10050"}],"groups":[{"groupid":"2"}],"templates":[{"templateid":"10001"}]},"auth":"$TOKEN","id":1}' http://${IP}/zabbix/api_jsonrpc.php

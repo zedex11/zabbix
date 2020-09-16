@@ -59,7 +59,7 @@ resource "google_compute_instance" "vm_instance2" {
     ssh-keys    = "centos:${file(var.enter_path_to_public_key)}"   
   }
   metadata_startup_script = templatefile("zabbix_client_and_tomcat.sh", { 
-    IP          = "${local.server_IP}" })  //getting server IP
+    IP          = "${local.server_IP}" }) //getting client IP
   network_interface {
     network     = "default"
     access_config {
