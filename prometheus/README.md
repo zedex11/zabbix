@@ -1,0 +1,6 @@
+![alt text](https://github.com/zedex11/zabbix/blob/master/prometheus/scrin/output.png)
+![alt text](https://github.com/zedex11/zabbix/blob/master/prometheus/scrin/continers_up.png)
+![alt text](https://github.com/zedex11/zabbix/blob/master/prometheus/scrin/Prometheus.png)
+![alt text](https://github.com/zedex11/zabbix/blob/master/prometheus/scrin/Blackbox_logs.png)
+![alt text](https://github.com/zedex11/zabbix/blob/master/prometheus/scrin/blackbox.png)
+![alt text](https://github.com/zedex11/zabbix/blob/master/prometheus/scrin/Linux%20Hosts%20Metrics.png)
